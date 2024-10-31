@@ -4,11 +4,12 @@ import Game from './Game';
 
 import { ICompetitionGames } from '../types/ICompetitionGames';
 
-const Competition = ({
+const CompetitionGames = ({
   id,
   competition_name,
   games,
-  blinking_game
+  blinking_game,
+  handleOnGameClick,
 }: ICompetitionGames) => {
   return (
     <Box
@@ -41,6 +42,7 @@ const Competition = ({
             ongoing={game.started}
             finished={game.finished}
             blinking_game={blinking_game}
+            handleOnGameClick={handleOnGameClick}
           />
         ))}
       </Box>
@@ -48,4 +50,4 @@ const Competition = ({
   );
 }
 
-export default Competition;
+export default CompetitionGames;

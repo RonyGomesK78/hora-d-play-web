@@ -2,7 +2,7 @@ import { Box, Typography } from '@mui/material';
 
 import GameScore from './GameScore';
 
-import { IGameDetails } from '../types/IGameDetails';
+import { IGame } from '../types/IGame';
 
 const Game = ({
   id,
@@ -17,10 +17,12 @@ const Game = ({
   ongoing,
   finished,
   blinking_game,
-}: IGameDetails) => {
+  handleOnGameClick,
+}: IGame) => {
   return (
     <Box key={id} width="100%" sx={{ border: '1px solid #C5C6D0' }}>
       <Box
+        onClick={() => handleOnGameClick(id)}
         sx={{
           width: "100%",
           pt: "1rem",
@@ -32,10 +34,10 @@ const Game = ({
           color: ongoing ? '#006BD6' : 'inherit',
           '&:hover': {
             color: '#006BD6',
-          },
+          }
         }}
       >
-        <GameScore 
+        <GameScore
           home_team_id={home_team_id}
           home_team_name={home_team_name}
           home_score={home_score}

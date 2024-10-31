@@ -1,4 +1,4 @@
-export interface IGameDetails {
+export interface IGame {
   id: string,
   home_team_id: string,
   home_team_name: string,
@@ -11,4 +11,5 @@ export interface IGameDetails {
   ongoing: boolean,
   finished: boolean,
   blinking_game: string | null,
+  handleOnGameClick: (id: string) => undefined,
 }
